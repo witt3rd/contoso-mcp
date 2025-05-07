@@ -13,7 +13,7 @@ public class Program
         var builder = Host.CreateApplicationBuilder(args);
 
         // Add MCP server services and register tools
-        builder.Services.AddMcpServer().WithStdioServerTransport().WithTools<WeatherTools>();
+        builder.Services.AddMcpServer().WithStdioServerTransport().WithTools<ProductTools>();
 
         var app = builder.Build();
 
