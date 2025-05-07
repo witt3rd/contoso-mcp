@@ -1,8 +1,6 @@
 using ContosoMcpServer.Tools;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using ModelContextProtocol.Server;
 
 namespace ContosoMcpServer;
 
