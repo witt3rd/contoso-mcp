@@ -1,7 +1,4 @@
-using System;
 using System.ComponentModel;
-using System.Net.Http;
-using System.Threading.Tasks;
 using ModelContextProtocol.Server;
 
 namespace ContosoMcpServer.Tools
@@ -32,12 +29,10 @@ namespace ContosoMcpServer.Tools
             }
             catch (HttpRequestException e)
             {
-                // Consider logging the full exception e
                 return $"{{\"error\": \"Failed to search products. {e.Message}\"}}";
             }
-            catch (Exception ex) // Catch other potential exceptions
+            catch (Exception ex)
             {
-                // Consider logging the full exception ex
                 return $"{{\"error\": \"An unexpected error occurred while searching products. {ex.Message}\"}}";
             }
         }
@@ -56,12 +51,10 @@ namespace ContosoMcpServer.Tools
             }
             catch (HttpRequestException e)
             {
-                // Consider logging the full exception e
                 return $"{{\"error\": \"Failed to get product with ID {productId}. {e.Message}\"}}";
             }
-            catch (Exception ex) // Catch other potential exceptions
+            catch (Exception ex)
             {
-                // Consider logging the full exception ex
                 return $"{{\"error\": \"An unexpected error occurred while getting product with ID {productId}. {ex.Message}\"}}";
             }
         }
