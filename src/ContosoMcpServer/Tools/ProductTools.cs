@@ -11,18 +11,22 @@ namespace ContosoMcpServer.Tools
     {
         private static readonly HttpClient httpClient = new HttpClient
         {
-            BaseAddress = new Uri("http://127.0.0.1:8000/")
+            BaseAddress = new Uri("http://127.0.0.1:8000/"),
         };
 
         [McpServerTool(Name = "search_products")]
-        [Description("Search for products by name or description using fuzzy matching. Returns a list of potential matches with confidence scores.")]
+        [Description(
+            "Search for products by name or description using fuzzy matching. Returns a list of potential matches with confidence scores."
+        )]
         public static async Task<string> SearchProductsAsync(
             [Description("Search query for product name or description")] string query
         )
         {
             try
             {
-                HttpResponseMessage response = await httpClient.GetAsync($"search_products/?query={Uri.EscapeDataString(query)}");
+                HttpResponseMessage response = await httpClient.GetAsync(
+                    $"search_products/?query={Uri.EscapeDataString(query)}"
+                );
                 response.EnsureSuccessStatusCode();
                 return await response.Content.ReadAsStringAsync();
             }
