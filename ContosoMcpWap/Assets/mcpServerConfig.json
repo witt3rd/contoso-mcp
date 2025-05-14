@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "mcpServers": [
+        {
+            "name": "Contoso MCP Server",
+            "type": "stdio",
+            "command": "ContosoMcpServer.exe"
+        }
+    ]
+}
+ 
